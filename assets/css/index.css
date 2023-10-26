@@ -1,5 +1,6 @@
 :root {
     --main-title: #FFFFFF;
+    --light-text: #D2D2D2;
 }
 
 body {
@@ -43,4 +44,64 @@ body {
     font-size: 22px;
     margin-top: 5px;
     color: var(--main-title);
+}
+
+h2 {
+    font-size: 28px;
+    margin: 5px 0;
+}
+
+.prod-description {
+    font-size: 16px;
+    color: #a1a0a0;
+    margin: 5px 0;
+}
+
+h3 {
+    font-size: 24px;
+    margin: 5px 0;
+}
+
+.product-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--light-text);
+    margin: 20px 10px;
+    padding: 20px 0;
+}
+
+.prod-emoji {
+    font-size: 79px;
+    margin: 0;
+}
+
+.prod-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.prod-info {
+    margin-left: 30px;
+}
+
+.prod-add-btn {
+    font-size: 30px;
+    margin: 0;
+    border: 1px solid var(--light-text);
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    align-self: center;
+    text-align: center;
+    line-height: 45px;
+    font-family: 'Inter', Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 200;
+    color: #3C3C3C;
+    cursor: pointer;
+}
+
+.prod-add-btn:hover {
+    background-color: #f7f7f7;
 }
