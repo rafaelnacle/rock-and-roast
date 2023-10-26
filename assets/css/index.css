@@ -1,0 +1,46 @@
+:root {
+    --main-title: #FFFFFF;
+}
+
+body {
+    margin: 0;
+    font-family: 'Smythe', serif;
+}
+
+.container {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.figure-container {
+    margin: 0;
+    position: relative;
+}
+
+.header-img {
+    background-image: url('/assets/images/burger.png');
+    width: 600px;
+    height: 180px;
+    background-size: cover;
+    filter: grayscale(1);
+}
+
+.header-titles {
+    position: absolute;
+    top: 20px;
+    margin: 0;
+    left: 40px;
+    letter-spacing: 0.5px;
+}
+
+.title {
+    color: var(--main-title);
+    margin-bottom: 0px;
+    font-size: 39px;
+}
+
+.sub-title {
+    font-size: 22px;
+    margin-top: 5px;
+    color: var(--main-title);
+}
