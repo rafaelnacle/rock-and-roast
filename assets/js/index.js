@@ -1,9 +1,51 @@
 import { menuArray } from "./data.js"
 
 const productSectionEl = document.getElementById('products')
+const orderSectionEl = document.getElementById('order')
+const totalPriceEl = document.getElementById('total-price')
 
+let totalPrice = 0
+
+document.addEventListener('click', function (e) {
+  if (e.target.dataset.add) {
+    handleAddClick(e.target.dataset.add)
+  } else if (e.target.dataset.remove) {
+    handleRemoveClick(e.target.dataset.remove)
+  }
+})
+
+function handleAddClick(productId) {
+
+  orderSectionEl.classList.remove('hidden')
+
+
+  const selectedProduct = menuArray.filter(product => product.id === parseInt(productId))
+
+  if (selectedProduct.length > 0) {
+
+    if (totalPriceEl) {
+      totalPriceEl.classList.remove('hidden');
+    }
+
+    renderOrder(selectedProduct, productId)
+  }
+}
+
+function handleRemoveClick(productId) {
+  const divToRemove = document.querySelector(`[data-remove="${productId}"]`).closest('.order-container')
+
+  if (divToRemove) {
+    const removedProduct = menuArray.find(product => product.id === parseInt(productId))
+    totalPrice -= removedProduct.price;
+
+    renderTotalPrice();
+
+    divToRemove.remove()
+  }
+}
 
 function getProductList() {
+
   menuArray.forEach((product) => {
     productSectionEl.innerHTML += `
       <div class="product-container">
@@ -15,14 +57,44 @@ function getProductList() {
             <h3>${product.price} $</h3>
           </div>
         </div>
-        <p class="prod-add-btn" id="prod-add-btn">+</p>
+        <p class="prod-add-btn" data-add="${product.id}">+</p>
       </div>
     `
   })
+}
 
-  const prodAddBtn = document.getElementById("prod-add-btn")
+function renderOrder(selectedProduct, productId) {
+  selectedProduct.forEach((product) => {
+    orderSectionEl.innerHTML += `
+        <div class="order-container">
+          <div class="order-wrapper">
+            <h3>${product.name}</h3>
+            <p data-remove="${productId}">remove</p>
+          </div>
+          
+          <h3>$${product.price}</h3>
+        </div>
+      `
 
-  prodAddBtn.addEventListener('click', () => console.log('click'))
+    totalPrice += product.price
+
+    renderTotalPrice()
+  })
+}
+
+function renderTotalPrice() {
+
+  if (totalPriceEl) {
+    totalPriceEl.innerHTML = `
+    <div class="total-price">
+      <h3>Total price: </h3>
+      <h3>$${totalPrice}</h3>
+    </div>
+    <div class="complete-order">
+      <button class="order-btn">Complete order</button>
+    </div>
+    `
+  }
 }
 
 function render() {

@@ -1,6 +1,8 @@
 :root {
     --main-title: #FFFFFF;
     --light-text: #D2D2D2;
+    --medium-text: #A1A0A0;
+    --secondary-color: #16DB99;
 }
 
 body {
@@ -53,13 +55,12 @@ h2 {
 
 .prod-description {
     font-size: 16px;
-    color: #a1a0a0;
+    color: var(--medium-text);
     margin: 5px 0;
 }
 
 h3 {
-    font-size: 24px;
-    margin: 5px 0;
+    font-size: 20px;
 }
 
 .product-container {
@@ -104,4 +105,57 @@ h3 {
 
 .prod-add-btn:hover {
     background-color: #f7f7f7;
+}
+
+.order-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.order-wrapper h3 {
+    margin-right: 12px;
+}
+
+.order-wrapper p {
+    color: var(--medium-text);
+    cursor: pointer;
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.order-title {
+    text-align: center;
+}
+
+
+.total-price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.complete-order {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.order-btn {
+    width: 508px;
+    background-color: var(--secondary-color);
+    border: none;
+    height: 60px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
 }
