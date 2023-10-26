@@ -34,7 +34,22 @@
             <section id="order" class="hidden">
                 <h2 class="order-title">Your Order</h2>
             </section>
-            <section id="total-price">
+            <section id="total-price"></section>
+
+            <section id="modal" class="modal hidden">
+                <div class="modal-container">
+                    <p id="close-btn" class="close-btn">&times;</p>
+                    <h2>Enter card details</h2>
+                    <form action="#" method="post" class="modal-form" id="modal-form">
+                        <input type="text" name="username" id="username" placeholder="Enter your name" required />
+                        <input type="number" name="cardnumber" id="cardnumber" placeholder="Enter card number"
+                            required />
+                        <input type="password" name="cvv" id="cvv" placeholder="Enter CVV" required />
+                        <button type="submit" class="modal-btn btn">Pay</button>
+                    </form>
+                </div>
+            </section>
+            <section id="confirmation" class="confirmation">
 
             </section>
         </main>

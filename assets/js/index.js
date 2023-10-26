@@ -1,8 +1,13 @@
 import { menuArray } from "./data.js"
 
 const productSectionEl = document.getElementById('products')
-const orderSectionEl = document.getElementById('order')
-const totalPriceEl = document.getElementById('total-price')
+let orderSectionEl = document.getElementById('order')
+let totalPriceEl = document.getElementById('total-price')
+const modalEl = document.getElementById('modal')
+const modalFormEl = document.getElementById('modal-form')
+const closeModalBtn = document.getElementById('close-btn')
+const confirmationEl = document.getElementById('confirmation')
+const usernameInput = document.getElementById('username')
 
 let totalPrice = 0
 
@@ -13,6 +18,36 @@ document.addEventListener('click', function (e) {
     handleRemoveClick(e.target.dataset.remove)
   }
 })
+
+closeModalBtn.addEventListener('click', handleCloseModal)
+modalFormEl.addEventListener('submit', (e) => {
+  e.preventDefault()
+
+  clearOrderAfterPay()
+
+  confirmationEl.innerHTML = `
+    <div class="order-thanks">
+      <h2>Thanks, ${usernameInput.value}! Your order is on its way!</h2>
+    </div>
+  `
+
+
+  closeModal()
+})
+
+function clearOrderAfterPay() {
+  totalPriceEl.innerHTML = ""
+  orderSectionEl.innerHTML = ""
+  totalPrice = 0
+}
+
+function closeModal() {
+  modalEl.classList.add('hidden')
+}
+
+function handleCloseModal() {
+  modalEl.classList.toggle('hidden')
+}
 
 function handleAddClick(productId) {
 
@@ -91,10 +126,17 @@ function renderTotalPrice() {
       <h3>$${totalPrice}</h3>
     </div>
     <div class="complete-order">
-      <button class="order-btn">Complete order</button>
+      <button class="order-btn btn" id="order-btn">Complete order</button>
     </div>
     `
   }
+
+  const orderBtn = document.getElementById('order-btn')
+  orderBtn.addEventListener('click', openOrderConfirmationModal)
+}
+
+function openOrderConfirmationModal() {
+  modalEl.classList.toggle('hidden')
 }
 
 function render() {
