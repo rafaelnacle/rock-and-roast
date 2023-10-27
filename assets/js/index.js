@@ -31,7 +31,6 @@ modalFormEl.addEventListener('submit', (e) => {
     </div>
   `
 
-
   closeModal()
 })
 
@@ -45,8 +44,14 @@ function closeModal() {
   modalEl.classList.add('hidden')
 }
 
+function openOrderConfirmationModal() {
+  modalEl.classList.toggle('hidden')
+  document.getElementById('overlay').style.display = 'block'
+}
+
 function handleCloseModal() {
   modalEl.classList.toggle('hidden')
+  document.getElementById('overlay').style.display = 'none'
 }
 
 function handleAddClick(productId) {
@@ -133,10 +138,6 @@ function renderTotalPrice() {
 
   const orderBtn = document.getElementById('order-btn')
   orderBtn.addEventListener('click', openOrderConfirmationModal)
-}
-
-function openOrderConfirmationModal() {
-  modalEl.classList.toggle('hidden')
 }
 
 function render() {

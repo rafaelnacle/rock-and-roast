@@ -5,7 +5,7 @@ Restaurant menu app for another solo project from Scrimba
 ![image](https://github.com/rafaelnacle/rock-and-roast/assets/54647722/7d8f5dd6-dd8f-4bad-8849-e64a90e5372f)
 
 ### Modal
-![image](https://github.com/rafaelnacle/rock-and-roast/assets/54647722/20761de4-5f0e-4691-90ef-e15c13cc9a59)
+![image](https://github.com/rafaelnacle/rock-and-roast/assets/54647722/0ec56b36-760d-46f1-bb72-87e9efccae44)
 
 ### Confirmation
 ![image](https://github.com/rafaelnacle/rock-and-roast/assets/54647722/dbf20b7a-5b2c-4c4e-86c0-a34d76b9ab31)
