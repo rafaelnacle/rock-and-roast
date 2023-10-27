@@ -1,13 +1,16 @@
 :root {
+    --background: #FFFFFF;
     --main-title: #FFFFFF;
     --light-text: #D2D2D2;
     --medium-text: #A1A0A0;
     --secondary-color: #16DB99;
+    --tertiary-color: #065F46;
 }
 
 body {
     margin: 0;
     font-family: 'Smythe', serif;
+    background-color: var(--background);
 }
 
 .container {
@@ -22,11 +25,10 @@ body {
 }
 
 .header-img {
-    background-image: url('/assets/images/burger.png');
+    background-image: url('/assets/images/rock-roast.png');
     width: 600px;
     height: 180px;
     background-size: cover;
-    filter: grayscale(1);
 }
 
 .header-titles {
@@ -35,6 +37,7 @@ body {
     margin: 0;
     left: 40px;
     letter-spacing: 0.5px;
+    text-shadow: 1px 2px 1px black;
 }
 
 .title {
@@ -168,7 +171,7 @@ h3 {
 }
 
 .modal {
-    border: 2px solid #16DB99;
+    border: 2px solid var(--secondary-color);
     width: 524px;
     height: 524px;
     display: flex;
@@ -243,4 +246,39 @@ h3 {
 
 .hidden {
     display: none;
+}
+
+@media screen and (max-width: 480px) {
+
+    .header-img {
+        width: auto;
+        background-position: center;
+    }
+
+    .container {
+        width: auto;
+    }
+
+    .order-btn {
+        width: 90%;
+    }
+
+    .modal {
+        left: 20px;
+        width: 90%;
+
+    }
+
+    .modal-container {
+        width: 320px;
+    }
+
+    .modal-form input {
+        width: 300px;
+    }
+
+    .modal-form button {
+        align-items: center;
+        width: 316px;
+    }
 }
